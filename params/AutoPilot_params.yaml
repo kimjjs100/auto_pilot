@@ -1,0 +1,36 @@
+Thruster_pwm : 1600
+# pwm = Thruster input
+# thruster pwm signal is 1100 ~ 1900
+# `pwm = 1500` means stop
+
+waypoint_distance_tolerance : 2
+# for `Waypoints` reached judgement
+
+Waiting_time_on_waypoint : 10 #sec
+
+PID_gains : {
+  Kp : 150, 
+  Ki : 10, 
+  Kd : 10
+  }
+# for Controller
+
+waypoint_List: {
+  waypoints:
+  [
+    [4865002.08557928,5748070.17850413],
+    [4865014.22742244,5748043.16792914],
+    [4865002.08557928,5748070.17850413],
+    [4865014.22742244,5748043.16792914]
+  ],
+  
+  }
+
+weight : 0.02 
+# for Kalman filtering
+
+########## Magnetometer Parameter ############
+calibration_offsetX : 1933.5
+calibration_offsetY : -2657.5
+calibration_scaleFactorX : 1.02
+calibration_scaleFactorY : 1.06
