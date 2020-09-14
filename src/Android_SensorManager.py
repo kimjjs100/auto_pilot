@@ -1,5 +1,7 @@
 import math
 
+# Source : https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/hardware/SensorManager.java#22
+
 def getRotationMatrix(R, I, gravity, geomagnetic):
     Ax = gravity[0]
     Ay = gravity[1]

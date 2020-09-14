@@ -1,15 +1,8 @@
 <launch>
-	<!--node pkg="auto_pilot"  type="Fake_GPS_Publish.py" name="GPS" respawn="true"/>-->
-	<!--<node pkg="auto_pilot"  type="Fake_HeadingAngle_Publish.py" name="Compass"/>-->
-	<!--<node pkg="auto_pilot"  type="Fake_Servo.py" name="Servo"/>-->
-	<!--<node pkg="auto_pilot"  type="Fake_Thruster.py" name="Thruster"/>-->
-
 	<node pkg="auto_pilot"  type="GPS_Publish.py" respawn="true" name="GPS"  />
-	<!--<node pkg="auto_pilot"  type="Calibration.py" name="Compass_Calibration"/> -->
-	<node pkg="auto_pilot"  type="sensor_msg_sub.py" respawn="true" name="Compass"/> 
-
+	<node pkg="auto_pilot"  type="Compass_from_SmartPhone.py" respawn="true" name="Compass"/> 
 	<node pkg="auto_pilot"  type="Global_path.py" respawn="true" name="Path_Planner" output = "screen"/>
-	<node pkg="auto_pilot"  type="Thruster_Judgement.py" respawn="true" name="Thruster_Controller"/>
+	<node pkg="auto_pilot"  type="Thruster_Controller.py" respawn="true" name="Thruster_Controller"/>
 
 	<node pkg="rosserial_python" type="serial_node.py" name="arduino" respawn="true" args="/dev/ttyACM0"></node>
 	<!--<node name="rqt" pkg="rqt_gui" type="rqt_gui" />-->
